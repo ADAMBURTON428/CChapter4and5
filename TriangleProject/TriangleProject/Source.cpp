@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <time.h>
+#include <math.h>
 #include <stdio.h>
 #include<stdlib.h>
 using namespace std;
@@ -13,7 +14,7 @@ int rightTriangle() {
 	int missingsidechoice;
 	int missingside;
 
-	cout << "\nWhat you searching for 1 - Perimeter \n 2 - Missing Side ";
+	cout << "\nWhat you searching for 1 - Perimeter \n 2 - Missing Side\n ";
 	cin >> choice;
 
 	if (choice == 1) {
@@ -37,8 +38,8 @@ int rightTriangle() {
 		cin >> B;
 		cout << "Enter side C: ";
 		cin >> C;
-		A = (B * B) - (C * C);
-		missingside = A / A;
+		A = sqrt((C * C)-(B * B)) ;
+		missingside = A;
 		cout << "The number for the missing side is: " << missingside << endl;
 	}
 	else if (missingsidechoice == 2) {
@@ -46,8 +47,8 @@ int rightTriangle() {
 		cin >> A;
 		cout << "Enter side C: ";
 		cin >> C;
-		B = (A * A) - (C * C);
-		missingside = B / B;
+		B = sqrt((C * C)-(A * A));
+		missingside = B;
 		cout << "The number for the missing side is: " << missingside << endl;
 	}
 	else if (missingsidechoice == 3) {
@@ -55,8 +56,8 @@ int rightTriangle() {
 	cin >> B;
 	cout << "Enter side B: ";
 	cin >> A;
-	C = (A * A) + (B * B);
-	missingside = C / C;
+	C = sqrt((A * A) + (B * B));
+	missingside = C;
 	cout << "The number for the missing side is: " << missingside << endl;
 
 }
@@ -64,13 +65,77 @@ int rightTriangle() {
 return 0;
 }
 
+int isosceles() {
+	int choice;
+	int A;
+	int B;
+	int C;
+	int perimeter;
+	int missingsidechoice;
+	int missingside;
+
+	cout << "\nWhat you searching for 1 - Perimeter \n 2 - Missing Side\n ";
+	cin >> choice;
+
+	if (choice == 1) {
+		cout << "Enter side A: ";
+		cin >> A;
+		cout << "Enter side B: ";
+		cin >> B;
+		cout << "Enter side C: ";
+		cin >> C;
+
+		perimeter = A + B + C;
+		cout << "The perimeter is: " << perimeter << endl;
+	}
+	else if (choice == 2) {
+		cout << "Why you trying to find a missing side.A and B going to be the same and C you need angle\n";
+
+
+	}
+	return 0;
+}
+
+int equalateral() {
+	int choice;
+	int A;
+	int B;
+	int C;
+	int perimeter;
+	int missingsidechoice;
+	int missingside;
+
+	cout << "\nWhat you searching for 1 - Perimeter \n 2 - Missing Side\n ";
+	cin >> choice;
+
+	if (choice == 1) {
+		cout << "Enter side A: ";
+		cin >> A;
+		cout << "Enter side B: ";
+		cin >> B;
+		cout << "Enter side C: ";
+		cin >> C;
+
+		perimeter = A + B + C;
+		cout << "The perimeter is: " << perimeter << endl;
+
+
+	}
+	else if (choice == 2) {
+		cout << "Its all the same sides if you don't have a side then your out of luck\n";
+
+	}
+	
+
+	return 0;
+}
 int main() {
 
 	int chooseTriangle;
 
 	cout << "Welcome to the triangle calculator. " << endl;
 	cout << "What type of triangle are you solving for?" << endl;
-	cout << "1 - Right triangle\n2 - isosceles\n3 - equilateral";
+	cout << "1 - Right triangle\n2 - isosceles\n3 - equilateral\n";
 	cin >> chooseTriangle;
 	do {
 		if (chooseTriangle == 1) {
@@ -78,13 +143,13 @@ int main() {
 
 		}
 		else if (chooseTriangle == 2) {
-			//isosceles();
+			isosceles();
 		}
 		else if (chooseTriangle == 3) {
-			//equalateral();
+			equalateral();
 		}
 		else
-			cout << "That not a option";
+			cout << "Why did you press that ";
 	} while (chooseTriangle != 4);
 
 
