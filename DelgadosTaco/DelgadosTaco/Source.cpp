@@ -17,7 +17,7 @@ int main()
 	int drinkOrder = 0;
 	double Total;
 	do{
-		cout << "What would you like to order? \n1- Taco \n2- Burritos \n3- Drink \n4- Beans \n5- Tostadas";
+		cout << "What would you like to order? \n1- Taco \n2- Burritos \n3- Drink \n4- Beans \n5- Tostadas \n6- When finshed with your order";
 		cin >> input;
 
 		if (input == 1) 
